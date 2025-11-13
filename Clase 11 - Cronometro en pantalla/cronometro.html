@@ -1,39 +1,115 @@
 <!DOCTYPE html>
+<!-- Especifica que este es un documento HTML5 -->
 <html lang="en">
+<!-- Abre la etiqueta html con idioma inglés -->
 <head>
+    <!-- Sección de metadatos y configuración del documento -->
+    <!-- Especifica la codificación de caracteres como UTF-8 (compatible con caracteres especiales) -->
     <meta charset="UTF-8">
+    <!-- Configura la ventana para dispositivos móviles y escala responsiva -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Define el icono que aparece en la pestaña del navegador -->
+    <link rel="icon" type="image/png" sizes="32x32" href="cronometro.png">
+    <!-- Establece el título que aparece en la pestaña del navegador -->
     <title>Cronómetro</title>
     <style>
+        /* ========== ESTILOS DEL BODY (CONTENEDOR PRINCIPAL) ========== */
         body {
+            /* Utiliza la fuente Arial (sin serif) o equivalente del sistema */
             font-family: Arial, sans-serif;
+            /* Establece fondo oscuro: #222 es gris muy oscuro (casi negro) */
             background: #222;
+            /* Establece el color del texto en cyan brillante (#0ff es cyan en forma corta) */
             color: #0ff;
+            /* Utiliza Flexbox para distribuir elementos en columna */
             display: flex;
+            /* Coloca los elementos uno debajo de otro (vertical) */
             flex-direction: column;
+            /* Centra los elementos horizontalmente */
             align-items: center;
+            /* Centra los elementos verticalmente */
             justify-content: center;
+            /* Hace que el body ocupe toda la altura de la ventana */
             height: 100vh;
         }
+        /* ========== ESTILOS DEL H1 (DISPLAY DEL CRONÓMETRO) ========== */
         h1 { 
+            /* Establece el tamaño de la fuente a 4 veces el tamaño base (muy grande) */
             font-size: 4em; 
+            /* Añade espacio debajo del h1 para separarlo de otros elementos */
             margin-bottom: 20px;
+        }
+        /* ========== ANIMACIÓN KEYFRAMES "PULSE" ========== */
+        /* Esta animación crea un efecto de pulso/parpadeo */
+        @keyframes pulse {
+            /* Al 0% (inicio de la animación) */
+            0% { 
+                /* Tamaño normal (sin escalar) */
+                transform: scale(1); 
+                /* Sin sombra de texto (transparente) */
+                text-shadow: 0 0 0 rgba(0,255,255,0); 
+                /* Color cyan normal */
+                color: #0ff; 
             }
+            /* Al 50% (mitad de la animación) */
+            50% { 
+                /* Agranda el texto a 112% de su tamaño */
+                transform: scale(1.12); 
+                /* Añade una sombra de texto brillante en cyan (efecto de brillo) */
+                text-shadow: 0 0 18px rgba(0,255,255,0.9); 
+                /* Cambia a color blanco para más brillo */
+                color: #fff; 
+            }
+            /* Al 100% (final de la animación) */
+            100% { 
+                /* Vuelve al tamaño normal */
+                transform: scale(1); 
+                /* Remueve la sombra de texto */
+                text-shadow: 0 0 0 rgba(0,255,255,0); 
+                /* Vuelve al color cyan */
+                color: #0ff; 
+            }
+        }
+        /* ========== CLASE CSS "PULSE" ========== */
+        /* Esta clase aplica la animación al elemento que la tenga */
+        .pulse {
+            /* Ejecuta la animación "pulse" durante 1 segundo con transiciones suaves (ease-in-out) */
+            animation: pulse 1s ease-in-out;
+        }
+        /* ========== ESTILOS DE LOS BOTONES ========== */
         button {
+            /* Añade espacio interior (padding) de 10px arriba/abajo y 20px izquierda/derecha */
             padding: 10px 20px;
+            /* Añade espacio exterior (margen) de 5px por todos lados */
             margin: 5px;
+            /* Establece el tamaño de la fuente a 1em (tamaño normal) */
             font-size: 1em;
+            /* Redondea las esquinas del botón (8px de radio) */
             border-radius: 8px;
         }
     </style>
 </head>
+<!-- Cierra la sección head (metadatos y estilos) -->
 <body>
+    <!-- Abre el cuerpo del documento (contenido visible en la página) -->
+    <!-- Elemento h1 con ID "Cronómetro" que mostrará el tiempo: HH:MM:SS -->
     <h1 id = "Cronómetro"> 00:00:00</h1>
+    <!-- Contenedor div que agrupa todos los botones -->
     <div>
+        <!-- Botón "Iniciar" con ID "iniciar": inicia la ejecución del cronómetro -->
         <button id="iniciar"> Iniciar</button>
+        <!-- Botón "Pausar" con ID "pausar": pausa la ejecución del cronómetro -->
         <button id="pausar"> Pausar</button>
-        <button id="reiniciar"> Reiniciar</button>
+        <!-- Botón "Reiniciar" con ID "reiniciar": resetea el cronómetro a 00:00:00 -->
+        <button id="reiniciar"> Reiniciar</button>       
     </div>
+
+    <!-- Comentario: aquí es donde va el sonido y animación al llegar a 5 segundos -->
+    <!-- (La lógica se maneja en script.js mediante la función triggerFiveSeconds) -->
+
+    <!-- Importa el archivo JavaScript externo que contiene la lógica del cronómetro -->
     <script src="script.js"></script>
+    <!-- Cierra el cuerpo del documento -->
 </body>
+<!-- Cierra la etiqueta html -->
 </html>
