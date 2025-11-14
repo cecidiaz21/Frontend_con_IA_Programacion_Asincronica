@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Notas en el Navegador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 30px;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .contenedor {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .entrada {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        textarea {
+            width: 400px;
+            height: 80px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .botones {
+            display: flex;
+            gap: 10px;
+        }
+
+        /*aca esta el codigo para el efecto de los botones para q cambie de color con el evento mouseover*/
+        .botones button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        #guardar {
+            background: #4CAF50;
+            color: white;
+        }
+        /*aca esta el codigo para el efecto mouseover del boton guardar*/
+        #guardar:hover {
+            background: #45a049;
+        }
+        
+        /*aca esta el codigo para el efecto mouseover del boton borrar*/
+        #borrar {
+            background: #f44336;
+            color: white;
+        }
+
+        #borrar:hover {
+            background: #da190b;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Estilo para cada nota - 3 columnas con flexbox */
+        li {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Columna 1: Texto de la nota */
+        .nota-texto {
+            flex: 2;
+            text-align: left;
+            word-wrap: break-word;
+            color: #333;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* Columna 2: Fecha */
+        .nota-fecha {
+            flex: 1;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            white-space: nowrap;
+            min-width: 150px;
+        }
+
+        /* Columna 3: Botón eliminar */
+        .nota-eliminar {
+            flex: 0 0 auto;
+        }
+
+        .nota-eliminar button {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        /*aca esta el codigo para el efecto mouseover del boton eliminar cada nota individual*/
+        .nota-eliminar button:hover {
+            background: #cc0000;
+        }
+
+        /* Responsive para pantallas pequeñas */
+        @media (max-width: 768px) {
+            textarea {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nota-fecha {
+                text-align: left;
+                min-width: auto;
+            }
+
+            .nota-eliminar {
+                width: 100%;
+            }
+
+            .nota-eliminar button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>📝 Mis Notas</h1>
+
+        <div class="entrada">
+            <textarea id="nota" placeholder="Escribe una nota..."></textarea>
+            <div class="botones">
+                <button id="guardar">Guardar Nota</button>
+                <button id="borrar">Borrar Todo</button>
+            </div>
+        </div>
+
+        <ul id="listaNotas"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
