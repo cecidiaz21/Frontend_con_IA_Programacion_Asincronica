@@ -13,6 +13,9 @@
         body { text-align: center; font-family: Arial; padding-top: 80px; }
         /* Estilo para las imágenes: redondeadas, tamaño fijo, margen */
         img { border-radius: 50%; width: 120px; height: 120px; margin: 10px; }
+
+        h3 { margin: 5px; }
+        ul { list-style-type: none; padding: 0; align-items: flex-end;}
     </style>
 </head>
 <body>
@@ -24,8 +27,14 @@
     <button id="buscar">Buscar</button>
     <!-- Paso 9: Contenedor div donde se mostrarán los resultados de la búsqueda -->
     <div id="resultado"></div>
+    <!-- Paso 10: Encabezado para la sección de repositorios -->
+    <h3 id="repositorios" style="display: none;">Repositorios:</h3>
+    <!-- Paso 11: Lista donde se mostrarán los repositorios -->
+    <ul id="lista-repos" style="display: none;"></ul>
 
-    <!-- Paso 10: Inclusión del archivo JavaScript que maneja la lógica de la aplicación -->
+    <!-- Paso 12: Inclusión del archivo JavaScript que maneja la lógica de la aplicación -->
     <script src="script.js"></script>
+
+    <!--muestra los ultimos repositorios del usuario-->
 </body>
 </html>
