@@ -1,0 +1,31 @@
+<!-- Paso 1: Declaración del tipo de documento HTML5 -->
+<!DOCTYPE html>
+<!-- Paso 2: Elemento raíz HTML con idioma español -->
+<html lang="es">
+<head>
+    <!-- Paso 3: Configuración de codificación de caracteres UTF-8 -->
+    <meta charset="UTF-8">
+    <!-- Paso 4: Título de la página que aparece en la pestaña del navegador -->
+    <title>Buscador de Usuarios GitHub</title>
+    <!-- Paso 5: Estilos CSS internos para centrar el contenido y estilizar la imagen del avatar -->
+    <style>
+        /* Estilo para el cuerpo: centrado, fuente Arial, padding superior */
+        body { text-align: center; font-family: Arial; padding-top: 80px; }
+        /* Estilo para las imágenes: redondeadas, tamaño fijo, margen */
+        img { border-radius: 50%; width: 120px; height: 120px; margin: 10px; }
+    </style>
+</head>
+<body>
+    <!-- Paso 6: Encabezado principal con emoji de lupa -->
+    <h1>🔍 Buscador de Usuarios de GitHub</h1>
+    <!-- Paso 7: Campo de entrada de texto para ingresar el nombre de usuario -->
+    <input type="text" id="usuario" placeholder="Ingresa nombre de usuario">
+    <!-- Paso 8: Botón para iniciar la búsqueda -->
+    <button id="buscar">Buscar</button>
+    <!-- Paso 9: Contenedor div donde se mostrarán los resultados de la búsqueda -->
+    <div id="resultado"></div>
+
+    <!-- Paso 10: Inclusión del archivo JavaScript que maneja la lógica de la aplicación -->
+    <script src="script.js"></script>
+</body>
+</html>
