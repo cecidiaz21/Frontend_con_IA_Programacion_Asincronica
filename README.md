@@ -7,6 +7,7 @@ Trabajamos en el desarrollo de un cronómetro en pantalla.
 El mismo tiene 3 botones, INICIO - PAUSAR - REINICIAR.
 La interfaz es oscura y cuenta con una imagen para la pestaña (favicon).
 Cuenta con una función que permite que el reloj cambie de color a los 5 segundos y emita un sonido.
+Imagen!(https://raw.githubusercontent.com/cecidiaz21/Frontend_con_IA_Programacion_Asincronica/refs/heads/main/img/clima.png)
 
 #Clase 12
 Trabajamos en el desarrollo de una pagina de clima, con el uso de una api publica. 
